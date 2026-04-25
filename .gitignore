@@ -1,0 +1,34 @@
+# Временные и расчетные файлы MATLAB.
+*.asv
+*.m~
+*.mlx~
+slprj/
+*.slxc
+
+# Локальные исходные и обработанные наборы данных.
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+!data/raw/ardupilot/
+data/raw/ardupilot/*
+!data/raw/ardupilot/bin/
+data/raw/ardupilot/bin/*
+!data/raw/ardupilot/bin/.gitkeep
+!data/raw/ardupilot/bin/README.md
+!data/raw/ardupilot/bin/manifest_template.json
+data/raw/ardupilot/bin/*.BIN
+data/raw/ardupilot/bin/*.bin
+data/raw/ardupilot/bin/*.LOG
+data/raw/ardupilot/bin/*.log
+
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+
+# Результаты расчетов и отчеты, кроме фиксатора каталога.
+result/*
+!result/.gitkeep
+!result/README.md
+
+# Локальный документ валидационного базиса может содержать чувствительную информацию.
+docs/validation_basis/*.pdf
