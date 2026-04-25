@@ -29,3 +29,6 @@ data/processed/*
 result/*
 !result/.gitkeep
 !result/README.md
+
+# Локальный документ валидационного базиса может содержать чувствительную информацию.
+docs/validation_basis/*.pdf
