@@ -66,3 +66,17 @@
 Постпроцессор визуализации переносить в Simulink не требуется. `plotLogOverview`, `plotFlightPath3D`, `drawCopterFrame`, `animateCopterFlight` и сценарии PR №5 относятся к анализу результатов и демонстрации.
 
 Полноценная модель Simulink будет отдельным следующим этапом. Текущий PR проверяет, что расчетное ядро, примитивный регулятор и постпроцессор имеют понятные интерфейсы для будущей декомпозиции на блоки.
+
+## Связь с replay Model6DOF PR №6
+
+Перенос в Simulink должен выполняться после подтверждения устойчивого replay-контура в MATLAB. Уже выделены функции, которые сохраняют четкие входы и выходы и могут стать основой будущих блоков:
+
+- `rhs6DOF`;
+- `MotorModel`;
+- `quadXMixer`;
+- `PrimitiveAttitudeController`;
+- `PrimitiveAltitudeController`;
+- `PrimitivePositionController`;
+- `simulatePrimitiveClosedLoop`.
+
+Функции чтения файлов, формирования отчетов, построения графиков и записи JSON к переносу в Simulink не относятся.

@@ -1,0 +1,55 @@
+{
+  "fit_parameters": [
+    "thrust_scale",
+    "motor_tau_s",
+    "kQ_over_kT",
+    "linear_drag_x",
+    "linear_drag_y",
+    "linear_drag_z"
+  ],
+  "fixed_parameters": [
+    "mass_kg",
+    "inertia_diagonal"
+  ],
+  "use_products_of_inertia": false,
+  "objective_channels": [
+    "ATT.Roll",
+    "ATT.Pitch",
+    "ATT.Yaw",
+    "RATE.R",
+    "RATE.P",
+    "RATE.Y",
+    "altitude_m",
+    "vertical_speed_mps"
+  ],
+  "identification_validation_split": 0.6,
+  "random_seed": 57700,
+  "max_iterations": 200,
+  "robust_loss": "soft_l1",
+  "parameter_bounds": {
+    "thrust_scale": [
+      0.25,
+      3.0
+    ],
+    "motor_tau_s": [
+      0.02,
+      0.5
+    ],
+    "kQ_over_kT": [
+      0.001,
+      0.2
+    ],
+    "linear_drag_x": [
+      0.0,
+      5.0
+    ],
+    "linear_drag_y": [
+      0.0,
+      5.0
+    ],
+    "linear_drag_z": [
+      0.0,
+      5.0
+    ]
+  }
+}

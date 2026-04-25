@@ -1,0 +1,37 @@
+{
+  "sample_rate_hz": 100,
+  "min_window_duration_s": 2.0,
+  "max_window_duration_s": 8.0,
+  "use_logged_initial_attitude": true,
+  "use_logged_initial_rates": true,
+  "use_logged_initial_altitude": true,
+  "use_logged_initial_velocity": true,
+  "use_rcou_as_motor_input": true,
+  "normalize_rcou_with_vehicle_config": true,
+  "max_motor_saturation_percent": 5.0,
+  "max_nan_percent": 1.0,
+  "coordinate_frame": "NED",
+  "attitude_source_priority": [
+    "ATT",
+    "XKF1"
+  ],
+  "position_source_priority": [
+    "POS",
+    "GPS",
+    "XKF1"
+  ],
+  "velocity_source_priority": [
+    "POS",
+    "GPS",
+    "XKF1"
+  ],
+  "default_window_types": [
+    "hover_candidate",
+    "roll_response_candidate",
+    "pitch_response_candidate",
+    "yaw_response_candidate",
+    "thrust_response_candidate",
+    "climb_candidate",
+    "descent_candidate"
+  ]
+}
