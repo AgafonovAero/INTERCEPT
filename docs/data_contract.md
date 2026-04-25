@@ -128,6 +128,48 @@ data/raw/ardupilot/bin/
 
 Данная проверка выполнена по данным бортового журнала и не является полной независимой валидацией реального изделия по внешним средствам измерений.
 
+## Форматы физической проверки и стенда PR №8
+
+Файл `physical_configuration_check.json` должен содержать:
+
+- `vehicle_id`;
+- `check_date`;
+- `performed_by`;
+- `approved_by`;
+- `vehicle_nose_direction`;
+- `installed_propeller_type`;
+- массив `motors` с полями `motor_id`, `physical_position`, `rcou_channel`, `spin_direction`, `spin_sign`, `propeller_type`, `propeller_installation_direction`.
+
+Файл `motor_spin_check.csv` должен содержать:
+
+- `motor_id`;
+- `physical_position`;
+- `rcou_channel`;
+- `spin_direction`;
+- `spin_sign`;
+- `propeller_removed_for_spin_check`;
+- `performed_by`;
+- `check_date`.
+
+Файл `propulsion_static_test.csv` должен содержать:
+
+- `input_command` или `normalized_input`;
+- `pwm_us`;
+- `voltage_v`;
+- `current_a`;
+- `thrust_n`;
+- `rpm`, если есть;
+- `temperature_c`, если есть;
+- `motor_type`;
+- `propeller_type`;
+- `esc_type`;
+- `battery_or_power_source`;
+- `sample_time_s` или `point_id`.
+
+Файл `battery_discharge_test.csv` должен содержать `current_a`, `voltage_v`, `temperature_c`, `capacity_mah` и `sample_time_s` или `point_id`.
+
+Единицы измерения: тяга в Н, напряжение в В, ток в А, температура в градусах Цельсия, время в с, PWM в мкс. Реальные физические и стендовые файлы не добавляются в обычный Git.
+
 ## Поля для 3D replay и сравнения с Model6DOF
 
 Для 3D replay желательно наличие следующих данных:

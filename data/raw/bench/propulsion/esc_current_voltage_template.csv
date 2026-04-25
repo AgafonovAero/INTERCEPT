@@ -1,0 +1,2 @@
+point_id,sample_time_s,pwm_us,normalized_input,voltage_v,current_a,esc_temperature_c,motor_type,esc_type,notes
+1,0,1000,0,22.8,0,,BrotherHobby Avenger 2816-1050KV,SpeedyBee F405 V4 60A 3-6S 4in1 8-bit,

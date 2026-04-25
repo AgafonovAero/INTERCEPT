@@ -1,0 +1,60 @@
+{
+  "vehicle_id": "qc_ardupilot_v0",
+  "status": "not_available",
+  "check_date": "",
+  "performed_by": "",
+  "approved_by": "",
+  "vehicle_nose_direction": "",
+  "cad_to_body_confirmed": false,
+  "cad_to_body_candidate": "identity",
+  "installed_propeller_type": "",
+  "propeller_configuration_status": "inconsistent_sources",
+  "motors": [
+    {
+      "motor_id": 1,
+      "physical_position": "front_left",
+      "rcou_channel": 1,
+      "servo_function": "",
+      "spin_direction": "",
+      "spin_sign": 1,
+      "propeller_type": "",
+      "propeller_installation_direction": "",
+      "notes": ""
+    },
+    {
+      "motor_id": 2,
+      "physical_position": "front_right",
+      "rcou_channel": 2,
+      "servo_function": "",
+      "spin_direction": "",
+      "spin_sign": -1,
+      "propeller_type": "",
+      "propeller_installation_direction": "",
+      "notes": ""
+    },
+    {
+      "motor_id": 3,
+      "physical_position": "rear_right",
+      "rcou_channel": 3,
+      "servo_function": "",
+      "spin_direction": "",
+      "spin_sign": 1,
+      "propeller_type": "",
+      "propeller_installation_direction": "",
+      "notes": ""
+    },
+    {
+      "motor_id": 4,
+      "physical_position": "rear_left",
+      "rcou_channel": 4,
+      "servo_function": "",
+      "spin_direction": "",
+      "spin_sign": -1,
+      "propeller_type": "",
+      "propeller_installation_direction": "",
+      "notes": ""
+    }
+  ],
+  "safety_confirmation": "Направление вращения проверялось безопасным способом; при отсутствии необходимости тяги винты были сняты.",
+  "notes": ""
+}

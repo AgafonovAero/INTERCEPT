@@ -1,0 +1,5 @@
+motor_id,physical_position,rcou_channel,spin_direction,spin_sign,propeller_removed_for_spin_check,performed_by,check_date,notes
+1,front_left,1,,1,true,,,
+2,front_right,2,,-1,true,,,
+3,rear_right,3,,1,true,,,
+4,rear_left,4,,-1,true,,,

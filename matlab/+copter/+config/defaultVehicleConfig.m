@@ -92,6 +92,15 @@ config.model6dof.tau_motor_s = 0.05;
 config.model6dof.kQ_over_kT_m = 0.02;
 config.model6dof.linear_drag = [0.05; 0.05; 0.08];
 
+config.configuration_status = struct();
+config.configuration_status.motor_map_status = "hypothesis_from_log";
+config.configuration_status.spin_sign_status = "hypothesis_from_log";
+config.configuration_status.cad_to_body_status = "hypothesis_from_log";
+config.configuration_status.propulsion_model_status = "demonstration";
+config.configuration_status.propeller_configuration_status = "inconsistent_sources";
+config.configuration_status.note = "До физического подтверждения конфигурация Model6DOF является расчетной гипотезой.";
+config.model6dof.configuration_status = config.configuration_status;
+
 config.criteria = struct();
 config.criteria.rate_roll_pitch_fit_min_percent = 70;
 config.criteria.rate_yaw_fit_min_percent = 60;

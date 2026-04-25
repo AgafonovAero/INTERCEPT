@@ -1,0 +1,5 @@
+motor_id,physical_position,propeller_type,propeller_marking,installation_direction,confirmed_by,check_date,notes
+1,front_left,,,,,,
+2,front_right,,,,,,
+3,rear_right,,,,,,
+4,rear_left,,,,,,

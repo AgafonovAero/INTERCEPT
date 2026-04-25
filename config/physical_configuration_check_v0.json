@@ -1,0 +1,24 @@
+{
+  "version": "v0",
+  "vehicle_id": "qc_ardupilot_v0",
+  "status": "template_required",
+  "expected_file": "data/raw/physical_checks/physical_configuration_check.json",
+  "pr7_selected_motor_map_candidate": "perm_7",
+  "pr7_selected_cad_to_body_candidate": "identity",
+  "required_checks": [
+    "motor_order",
+    "motor_spin_direction",
+    "rcou_servo_to_motor_mapping",
+    "propeller_type",
+    "propeller_installation_direction",
+    "vehicle_nose_direction",
+    "cad_to_body_confirmation"
+  ],
+  "safety_note": "Проверку направления вращения без необходимости тяги выполнять со снятыми воздушными винтами согласно внутренним процедурам организации.",
+  "status_values": [
+    "not_available",
+    "hypothesis_only",
+    "physically_confirmed",
+    "inconsistent"
+  ]
+}
