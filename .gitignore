@@ -1,0 +1,16 @@
+# Временные и расчетные файлы MATLAB.
+*.asv
+*.m~
+*.mlx~
+slprj/
+*.slxc
+
+# Локальные исходные и обработанные наборы данных.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Результаты расчетов и отчеты, кроме фиксатора каталога.
+results/*
+!results/.gitkeep
