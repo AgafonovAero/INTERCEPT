@@ -136,6 +136,10 @@ classdef TestRepositoryFiles < matlab.unittest.TestCase
                 "docs/review/assets/pr5/synthetic_box_attitude.png"
                 "docs/review/assets/pr5/synthetic_motor_commands.png"
                 "docs/review/assets/pr5/synthetic_box_flight.gif"
+                "docs/review/PR-006-model6dof-log-replay-report.md"
+                "docs/review/PR-006-parameter-identification-report.md"
+                "docs/review/PR-006-model6dof-validation-summary.md"
+                "docs/review/PR-006-acceptance-report.md"
                 ];
 
             for index = 1:numel(requiredPaths)
