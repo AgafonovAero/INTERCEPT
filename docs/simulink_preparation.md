@@ -104,3 +104,15 @@
 - нормированные команды двигателей в подтвержденном физическом порядке.
 
 PR №7 не выполняет перенос в Simulink. Он устраняет риск переноса неверной физической конфигурации в отдельную среду расчета.
+
+## Статусы перед переносом Plant6DOF
+
+Перенос `Plant6DOF` в Simulink допускается только после фиксации статусов:
+
+- `motor_map_status`;
+- `spin_sign_status`;
+- `cad_to_body_status`;
+- `propulsion_model_status`;
+- `propeller_configuration_status`.
+
+Если любой из этих статусов остается `hypothesis_from_log`, `hypothesis_only`, `demonstration` или `inconsistent_sources`, Simulink-модель допускается только как демонстрационная. PR №8 не выполняет перенос в Simulink и готовит данные управления конфигурацией для будущего этапа.

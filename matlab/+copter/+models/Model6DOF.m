@@ -16,8 +16,15 @@ model.linear_drag = double(config.model6dof.linear_drag(:));
 model.inertia_kg_m2 = getInertiaMatrix(config);
 model.motor_positions_m = getMotorPositions(config);
 model.spin_sign = double(config.geometry.spin_sign(:));
+model.configuration_status = getConfigurationStatus(config);
+model.motor_map_status = model.configuration_status.motor_map_status;
+model.spin_sign_status = model.configuration_status.spin_sign_status;
+model.cad_to_body_status = model.configuration_status.cad_to_body_status;
+model.propulsion_model_status = model.configuration_status.propulsion_model_status;
+model.propeller_configuration_status = model.configuration_status.propeller_configuration_status;
 model.warnings = string(config.warnings(:));
 model.warnings(end + 1, 1) = "Параметры тяги в PR №5 заданы демонстрационно и подлежат идентификации по стендовым или летным данным.";
+model.warnings(end + 1, 1) = "До физического подтверждения выбранная конфигурация Model6DOF должна рассматриваться как расчетная гипотеза.";
 model.limitations = [
     "Model6DOF в демонстрационном режиме не является полной независимой валидацией."
     "Аэродинамика, ESC telemetry и модель винтомоторной группы подлежат дальнейшей идентификации."
@@ -56,4 +63,26 @@ positionsCad = [
     motor4 - centerOfMass
     ] ./ 1000;
 positions = transform * positionsCad;
+end
+
+function status = getConfigurationStatus(config)
+if isfield(config, 'configuration_status')
+    status = config.configuration_status;
+elseif isfield(config.model6dof, 'configuration_status')
+    status = config.model6dof.configuration_status;
+else
+    status = struct();
+end
+
+status = ensureStatusField(status, "motor_map_status", "unknown");
+status = ensureStatusField(status, "spin_sign_status", "unknown");
+status = ensureStatusField(status, "cad_to_body_status", "unknown");
+status = ensureStatusField(status, "propulsion_model_status", "unknown");
+status = ensureStatusField(status, "propeller_configuration_status", "inconsistent_sources");
+end
+
+function status = ensureStatusField(status, fieldName, defaultValue)
+if ~isfield(status, char(fieldName)) || strlength(string(status.(char(fieldName)))) == 0
+    status.(char(fieldName)) = string(defaultValue);
+end
 end

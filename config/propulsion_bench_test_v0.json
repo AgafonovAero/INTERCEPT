@@ -1,0 +1,31 @@
+{
+  "version": "v0",
+  "vehicle_id": "qc_ardupilot_v0",
+  "status": "template_required",
+  "static_test_expected_file": "data/raw/bench/propulsion/propulsion_static_test.csv",
+  "battery_test_expected_file": "data/raw/bench/propulsion/battery_discharge_test.csv",
+  "esc_test_expected_file": "data/raw/bench/propulsion/esc_current_voltage.csv",
+  "required_static_fields": [
+    "input_command",
+    "pwm_us",
+    "normalized_input",
+    "voltage_v",
+    "current_a",
+    "thrust_n",
+    "rpm",
+    "temperature_c",
+    "motor_type",
+    "propeller_type",
+    "esc_type",
+    "battery_or_power_source",
+    "sample_time_s"
+  ],
+  "static_thrust_model": "T = a0 + a1*u + a2*u^2",
+  "current_model": "I = b0 + b1*u + b2*u^2",
+  "battery_model": "V = V0 - I*R_internal",
+  "allowed_propellers": [
+    "Gemfan 8060, 3 лопасти",
+    "APC 7x11E"
+  ],
+  "note": "Реальные стендовые данные не добавляются в обычный Git."
+}

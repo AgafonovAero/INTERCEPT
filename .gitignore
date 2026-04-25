@@ -10,6 +10,8 @@ data/raw/*
 !data/raw/.gitkeep
 !data/raw/README.md
 !data/raw/ardupilot/
+!data/raw/physical_checks/
+!data/raw/bench/
 data/raw/ardupilot/*
 !data/raw/ardupilot/bin/
 data/raw/ardupilot/bin/*
@@ -32,3 +34,20 @@ result/*
 
 # Локальный документ валидационного базиса может содержать чувствительную информацию.
 docs/validation_basis/*.pdf
+
+# Реальные физические проверки и стендовые данные могут содержать чувствительные сведения.
+data/raw/physical_checks/*
+!data/raw/physical_checks/.gitkeep
+!data/raw/physical_checks/README.md
+!data/raw/physical_checks/physical_configuration_check_template.json
+!data/raw/physical_checks/motor_spin_check_template.csv
+!data/raw/physical_checks/motor_order_check_template.csv
+!data/raw/physical_checks/propeller_installation_check_template.csv
+
+data/raw/bench/propulsion/*
+!data/raw/bench/propulsion/
+!data/raw/bench/propulsion/.gitkeep
+!data/raw/bench/propulsion/README.md
+!data/raw/bench/propulsion/propulsion_static_test_template.csv
+!data/raw/bench/propulsion/battery_discharge_test_template.csv
+!data/raw/bench/propulsion/esc_current_voltage_template.csv

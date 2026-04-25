@@ -1,0 +1,15 @@
+{
+  "version": "v1_template",
+  "vehicle_id": "qc_ardupilot_v0",
+  "source_vehicle_config": "config/vehicle_qc_ardupilot_v0.json",
+  "physical_check_source": "data/raw/physical_checks/physical_configuration_check.json",
+  "propulsion_bench_source": "data/raw/bench/propulsion/propulsion_static_test.csv",
+  "motor_map_status": "hypothesis_from_log",
+  "spin_sign_status": "hypothesis_from_log",
+  "cad_to_body_status": "hypothesis_from_log",
+  "propulsion_model_status": "demonstration",
+  "propeller_configuration_status": "inconsistent_sources",
+  "selected_motor_map_candidate": "perm_7",
+  "selected_cad_to_body_candidate": "identity",
+  "warning": "До физического подтверждения подключения моторов, направлений вращения и установленного типа винтов выбранная конфигурация Model6DOF должна рассматриваться как расчетная гипотеза."
+}

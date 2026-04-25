@@ -1,0 +1,2 @@
+point_id,sample_time_s,current_a,voltage_v,temperature_c,capacity_mah,energy_wh,battery_type,notes
+1,0,0,22.8,25,7000,,GNB Gaoneng LiPo 7000mAh 6S1P 22.8V 70C,
