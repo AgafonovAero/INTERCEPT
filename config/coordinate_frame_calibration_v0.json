@@ -1,0 +1,19 @@
+{
+  "default_frame": "NED",
+  "body_axes_definition": "x forward, y right, z down",
+  "cad_axes_confirmed": false,
+  "use_diagonal_inertia_only_until_confirmed": true,
+  "test_cad_to_body_candidates": true,
+  "allowed_cad_to_body_transforms": [
+    "identity",
+    "swap_x_z",
+    "swap_y_z",
+    "sign_flip_x",
+    "sign_flip_y",
+    "sign_flip_z",
+    "candidate_from_motor_geometry"
+  ],
+  "attitude_units_internal": "rad",
+  "rate_units_internal": "rad/s",
+  "report_units": "deg and deg/s"
+}
