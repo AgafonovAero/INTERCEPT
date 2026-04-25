@@ -1,0 +1,14 @@
+{
+  "description": "Настройки выделения участков-кандидатов валидационного базиса для PR №3",
+  "sample_rate_hz": 100,
+  "min_segment_duration_s": 2,
+  "max_segment_duration_s": 20,
+  "hover_max_horizontal_speed_mps": 1.5,
+  "hover_max_vertical_speed_mps": 0.6,
+  "hover_max_roll_pitch_deg": 8,
+  "climb_vertical_speed_threshold_mps": 1.0,
+  "descent_vertical_speed_threshold_mps": 1.0,
+  "response_min_control_amplitude": 0.15,
+  "max_motor_saturation_percent": 5,
+  "allowed_nan_percent": 10
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Настройки первой идентификации ModelRate по участкам бортового журнала для PR №3",
+  "derivative_method": "central_difference_with_outlier_filter",
+  "smoothing_window_s": 0.15,
+  "input_delay_search_samples": 5,
+  "train_validation_split": 0.6,
+  "random_seed": 57700,
+  "fit_axes": [
+    "R",
+    "P",
+    "Y"
+  ],
+  "default_acceptance_criteria": {
+    "RATE.R_fit_min_percent": 70,
+    "RATE.P_fit_min_percent": 70,
+    "RATE.Y_fit_min_percent": 60
+  }
+}

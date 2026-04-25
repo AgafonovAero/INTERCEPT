@@ -35,6 +35,22 @@ run('scripts/analyze_bin_logs.m')
 
 Файл `scripts/07_analyze_bin_logs.m` сохранен как номерной сценарий проекта. Для командного запуска в MATLAB используется технический wrapper `scripts/analyze_bin_logs.m`, так как имя файла сценария, начинающееся с цифры, не является допустимым именем исполняемого сценария MATLAB.
 
+## Выделение участков ВБ и идентификация ModelRate
+
+Для PR №3 добавлен сценарий подготовки обработанных наборов данных, выделения участков-кандидатов ВБ и первой идентификации `ModelRate`:
+
+```matlab
+run('scripts/extract_segments_and_fit_rate_model.m')
+```
+
+Номерной файл этапа сохранен как `scripts/08_extract_segments_and_fit_rate_model.m`. Команда ниже приведена как идентификатор этапа в структуре проекта, но для фактического командного запуска MATLAB используется wrapper с техническим именем:
+
+```matlab
+run('scripts/08_extract_segments_and_fit_rate_model.m')
+```
+
+Сценарий формирует локальные расчетные выходы в `result/rate_identification/` и несекретные сводные отчеты в `docs/review/`.
+
 Сценарий ищет локальные журналы:
 
 - `data/raw/ardupilot/bin/VB-01.alt_50m.BIN`;
