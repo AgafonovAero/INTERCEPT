@@ -1,0 +1,44 @@
+{
+  "description": "Шаблон реестра бортовых журналов ArduPilot для изделия qc_ardupilot_v0",
+  "logs": [
+    {
+      "file_name": "00000006.BIN",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "source": "flight_team",
+      "validation_case_id": "",
+      "flight_date": "",
+      "pilot_or_operator": "",
+      "brief_description": "",
+      "notes": "",
+      "use_for_identification": false,
+      "use_for_validation": false
+    },
+    {
+      "file_name": "00000007.BIN",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "source": "flight_team",
+      "validation_case_id": "",
+      "flight_date": "",
+      "pilot_or_operator": "",
+      "brief_description": "",
+      "notes": "",
+      "use_for_identification": false,
+      "use_for_validation": false
+    },
+    {
+      "file_name": "Alt_50m.bin",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "source": "flight_team",
+      "validation_case_id": "",
+      "flight_date": "",
+      "pilot_or_operator": "",
+      "brief_description": "",
+      "notes": "",
+      "use_for_identification": false,
+      "use_for_validation": false
+    }
+  ]
+}

@@ -6,13 +6,13 @@ import matlab.unittest.TestSuite
 import matlab.unittest.TestRunner
 import matlab.unittest.plugins.DiagnosticsRecordingPlugin
 
-kornevoyKatalog = fileparts(fileparts(mfilename('fullpath')));
-naborProverok = TestSuite.fromFolder(fullfile(kornevoyKatalog, 'tests'), ...
-    'IncludingSubfolders', false);
+projectRoot = fileparts(fileparts(mfilename('fullpath')));
+testFolder = fullfile(projectRoot, 'tests');
+suite = TestSuite.fromFolder(testFolder, 'IncludingSubfolders', false);
 
-ispolnitel = TestRunner.withTextOutput('OutputDetail', 3);
-ispolnitel.addPlugin(DiagnosticsRecordingPlugin);
-rezultat = ispolnitel.run(naborProverok);
+runner = TestRunner.withTextOutput('OutputDetail', 3);
+runner.addPlugin(DiagnosticsRecordingPlugin);
+result = runner.run(suite);
 
-disp(rezultat);
-assertSuccess(rezultat);
+disp(result);
+assertSuccess(result);
