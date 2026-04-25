@@ -17,6 +17,11 @@ model.inertia_kg_m2 = getInertiaMatrix(config);
 model.motor_positions_m = getMotorPositions(config);
 model.spin_sign = double(config.geometry.spin_sign(:));
 model.warnings = string(config.warnings(:));
+model.warnings(end + 1, 1) = "Параметры тяги в PR №5 заданы демонстрационно и подлежат идентификации по стендовым или летным данным.";
+model.limitations = [
+    "Model6DOF в демонстрационном режиме не является полной независимой валидацией."
+    "Аэродинамика, ESC telemetry и модель винтомоторной группы подлежат дальнейшей идентификации."
+    ];
 end
 
 function inertia = getInertiaMatrix(config)
