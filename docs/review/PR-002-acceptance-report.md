@@ -142,7 +142,7 @@ run('scripts/analyze_bin_logs.m')
 Анализ бортового журнала: data/raw/ardupilot/bin/VB-01.alt_50m.BIN
 Анализ бортового журнала: data/raw/ardupilot/bin/full_fly_1.BIN
 Анализ бортового журнала: data/raw/ardupilot/bin/full_fly_2.BIN
-Реестр состава каналов сформирован: D:\WORK\AI_SOLUTION\INTERCEPT\result\bin_analysis\log_channel_inventory.csv
+Реестр состава каналов сформирован: result/bin_analysis/log_channel_inventory.csv
 ```
 
 Локальные отчеты сформированы в `result/bin_analysis`. Они не добавлены в Git, так как каталог `result` является расчетным выходом.
