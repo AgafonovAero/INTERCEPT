@@ -1,0 +1,36 @@
+{
+  "description": "Реестр локальных бортовых журналов ArduPilot DataFlash для анализа состава каналов изделия qc_ardupilot_v0",
+  "vehicle_id": "qc_ardupilot_v0",
+  "logs": [
+    {
+      "file_name": "VB-01.alt_50m.BIN",
+      "relative_path": "data/raw/ardupilot/bin/VB-01.alt_50m.BIN",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "candidate_validation_case_id": "В-01",
+      "note": "Имя файла указывает alt_50m, а в ВБ случай В-01 задан как висение на высоте 30 м; фактическую высоту подтвердить по журналу.",
+      "use_for_identification": false,
+      "use_for_validation": false
+    },
+    {
+      "file_name": "full_fly_1.BIN",
+      "relative_path": "data/raw/ardupilot/bin/full_fly_1.BIN",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "candidate_validation_case_id": "",
+      "note": "Полный полет; участки ВБ будут выделены после анализа каналов, режимов и временных интервалов.",
+      "use_for_identification": false,
+      "use_for_validation": false
+    },
+    {
+      "file_name": "full_fly_2.BIN",
+      "relative_path": "data/raw/ardupilot/bin/full_fly_2.BIN",
+      "vehicle_id": "qc_ardupilot_v0",
+      "format": "ArduPilot DataFlash BIN",
+      "candidate_validation_case_id": "",
+      "note": "Полный полет; участки ВБ будут выделены после анализа каналов, режимов и временных интервалов.",
+      "use_for_identification": false,
+      "use_for_validation": false
+    }
+  ]
+}

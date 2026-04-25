@@ -28,7 +28,20 @@ classdef TestRepositoryFiles < matlab.unittest.TestCase
                 "matlab/+copter/+validation/validateByLog.m"
                 "matlab/+copter/+validation/buildValidationMatrix.m"
                 "matlab/+copter/+reports/writeMarkdownReport.m"
+                "matlab/+copter/+reports/writeBinAnalysisSummary.m"
+                "matlab/+copter/+reports/writeMissingBinLogsReport.m"
                 "matlab/+copter/+data/preprocessLogData.m"
+                "matlab/+copter/+data/inspectBinLog.m"
+                "matlab/+copter/+data/readBinLog.m"
+                "matlab/+copter/+data/parseDataFlashFmt.m"
+                "matlab/+copter/+data/decodeDataFlashMessage.m"
+                "matlab/+copter/+data/dataFlashFormatMap.m"
+                "matlab/+copter/+data/buildLogChannelInventory.m"
+                "config/log_manifest_v0.json"
+                "scripts/analyze_bin_logs.m"
+                "scripts/07_analyze_bin_logs.m"
+                "tests/TestDataFlashParserSynthetic.m"
+                "tests/TestLogManifest.m"
                 ];
 
             for index = 1:numel(requiredPaths)
