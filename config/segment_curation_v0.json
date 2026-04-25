@@ -1,0 +1,47 @@
+{
+  "min_duration_s": 2.0,
+  "max_duration_s": 12.0,
+  "min_input_std": 0.02,
+  "min_rate_std_deg_s": 1.0,
+  "max_nan_percent": 1.0,
+  "max_motor_saturation_percent": 5.0,
+  "min_time_gap_between_segments_s": 1.0,
+  "allow_overlapping_segments": false,
+  "prefer_distinct_logs_for_validation": true,
+  "fit_epsilon_denominator": 1.0e-9,
+  "max_condition_number": 100000000.0,
+  "input_delay_search_samples": [
+    -10,
+    -9,
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "candidate_types_for_rate_identification": [
+    "roll_response_candidate",
+    "pitch_response_candidate",
+    "yaw_response_candidate",
+    "hover_candidate"
+  ],
+  "exclude_candidate_types_for_rate_identification": [
+    "climb_candidate",
+    "descent_candidate",
+    "thrust_response_candidate"
+  ]
+}

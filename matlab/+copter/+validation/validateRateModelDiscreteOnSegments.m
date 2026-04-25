@@ -1,5 +1,5 @@
-function validationReport = validateRateModelOnSegments(model, processedData, validationSegments, config)
-% Проверяет ModelRate на отложенных участках validation.
+function validationReport = validateRateModelDiscreteOnSegments(model, processedData, validationSegments, config)
+% Проверяет ModelRateDiscrete на отложенных участках validation.
 
 if nargin < 4 || isempty(config)
     config = copter.config.defaultVehicleConfig();
@@ -12,14 +12,19 @@ warnings = strings(0, 1);
 for index = 1:height(validationSegments)
     segment = [validationSegments.t_start_s(index), validationSegments.t_end_s(index)];
     mask = dataTable.t_s >= segment(1) & dataTable.t_s <= segment(2);
+    if hasVariable(dataTable, "log_file") && hasVariable(validationSegments, "log_file")
+        mask = mask & string(dataTable.log_file) == string(validationSegments.log_file(index));
+    end
+
     segmentData = dataTable(mask, :);
     if height(segmentData) < 2
-        warnings(end + 1, 1) = "Участок validation " + string(validationSegments.segment_id(index)) + " содержит недостаточно строк.";
+        warnings(end + 1, 1) = "Участок validation " + string(validationSegments.segment_id(index)) ...
+            + " содержит недостаточно строк.";
         continue;
     end
 
     try
-        simulation = copter.validation.simulateSegment(segmentData, model, []);
+        simulation = copter.models.simulateRateDiscrete(segmentData, model, []);
         reference = readReferenceRates(segmentData);
         calculated = [
             simulation.RATE_R_calc_rad_s, ...
@@ -29,7 +34,8 @@ for index = 1:height(validationSegments)
         metrics = copter.validation.computeMetrics(reference, calculated);
         metricsRows = [metricsRows; makeMetricRows(validationSegments, index, metrics)];
     catch exception
-        warnings(end + 1, 1) = "Проверка участка " + string(validationSegments.segment_id(index)) + " не выполнена: " + string(exception.message);
+        warnings(end + 1, 1) = "Проверка дискретной модели на участке " ...
+            + string(validationSegments.segment_id(index)) + " не выполнена: " + string(exception.message);
     end
 end
 
@@ -109,17 +115,13 @@ for index = 1:3
         continue;
     end
 
-    mask = metricsTable.axis == axes(index);
-    if any(string(metricsTable.Properties.VariableNames) == "valid_metric_flag")
-        mask = mask & metricsTable.valid_metric_flag;
-    end
-
+    mask = metricsTable.axis == axes(index) & metricsTable.valid_metric_flag;
     meanFit(index) = mean(metricsTable.fit_percent(mask), 'omitnan');
     passed(index) = isfinite(meanFit(index)) && meanFit(index) >= limits(index);
     if passed(index)
         text(index) = axes(index) + ": предварительный критерий выполнен.";
     elseif ~isfinite(meanFit(index))
-        text(index) = axes(index) + ": показатель соответствия не применим для выбранных участков.";
+        text(index) = axes(index) + ": показатель соответствия не применим.";
     else
         text(index) = axes(index) + ": предварительный критерий не выполнен.";
     end
@@ -129,14 +131,14 @@ conclusion = table(axes, limits, meanFit, passed, text, ...
     'VariableNames', {'axis', 'fit_min_percent', 'mean_fit_percent', 'passed', 'conclusion'});
 end
 
-function result = hasVariable(dataTable, variableName)
-result = any(string(dataTable.Properties.VariableNames) == string(variableName));
-end
-
 function dataTable = localTable(dataSet)
 if istimetable(dataSet)
     dataTable = timetable2table(dataSet, 'ConvertRowTimes', false);
 else
     dataTable = dataSet;
 end
+end
+
+function result = hasVariable(dataTable, variableName)
+result = any(string(dataTable.Properties.VariableNames) == string(variableName));
 end
