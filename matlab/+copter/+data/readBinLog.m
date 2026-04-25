@@ -46,6 +46,7 @@ end
 
 function isDesired = isDesiredMessage(messageName)
 baseMessages = [
+    "PARM"
     "ATT"
     "RATE"
     "RCOU"

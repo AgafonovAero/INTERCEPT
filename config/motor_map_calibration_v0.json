@@ -1,0 +1,33 @@
+{
+  "candidate_generation_mode": "configured_and_permutations",
+  "max_candidates": 48,
+  "use_ardupilot_default_quad_x_candidate": true,
+  "use_vehicle_config_candidate": true,
+  "allow_motor_permutations": true,
+  "allow_yaw_spin_sign_variants": true,
+  "objective_channels": [
+    "RATE.R",
+    "RATE.P",
+    "RATE.Y",
+    "ATT.Roll",
+    "ATT.Pitch",
+    "ATT.Yaw"
+  ],
+  "validation_channels": [
+    "RATE.R",
+    "RATE.P",
+    "RATE.Y",
+    "ATT.Roll",
+    "ATT.Pitch",
+    "ATT.Yaw",
+    "altitude_m"
+  ],
+  "identification_window_source": "PR6 identification windows",
+  "validation_window_source": "PR6 validation windows",
+  "max_motor_saturation_percent": 5.0,
+  "min_input_variation": 0.02,
+  "use_rcou_param_scaling": true,
+  "default_pwm_min": 1000,
+  "default_pwm_max": 2000,
+  "report_top_n_candidates": 10
+}
